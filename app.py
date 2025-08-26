@@ -53,9 +53,6 @@ def create_user():
     return jsonify({"message": "Usuario cadastrado com sucesso"})
 
   return jsonify({"message": "Dados invalidos"}), 400
-
-@app.route('/hello-world', methods=['GET'])
-def hello_world():
     return "Hello, World!"
 
 if __name__ == '__main__':
