@@ -77,6 +77,14 @@ def update_user(user_id):
 
     return jsonify({"message": "Usuario nao encontrado"}), 404
 
+@app.route('/user/<int:user_id>', methods=["DELETE"])
+def delete_user(user_id):
+    user = User.query.get(user_id)
+
+    if user:
+      return jsonify({"message": f"Usuario {user_id} deletado com sucesso"})
+
+    return jsonify({"message": "Usuario nao encontrado"}), 404  
 
 # --- IGNORE ---
 if __name__ == '__main__':
